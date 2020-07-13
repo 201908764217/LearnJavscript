@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            history 保存用户历史记录
+
+            属性:
+            history.length
+
+
+
+            方法
+            history.back()      返回上一条历史记录
+            history.forword()   前进到下一条记录
+            history.go()        
+
+        */
+       function $(id){
+           return document.getElementById(id);
+       }
+       window.onload = function(){
+            var oBtn = $("btn");
+            oBtn.onclick =function(){
+                alert(history.length);
+            }
+            var oForward = $("forward");
+            var oBack = $("back");
+            var oGo =$("go");
+            oForward.onclick =function(){
+                history.forward();
+            }
+            oBack.onclick = function(){
+                history.back();
+            }
+            oGo.onclick = function(){
+                history.go();
+            }
+
+       }
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="记录">
+    <input type="button" id="forward" value="前进">
+    <input type="button" id="back" value="后退">
+    <input type="button" id="go" value="go">
+</body>
+</html>

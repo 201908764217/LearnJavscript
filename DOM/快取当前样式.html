@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            /*
+            获取当前有效样式
+            getComputedStyle(元素节点)[获取样式类型];
+            火狐,谷歌,苹果浏览器支持
+
+
+            IE  元素节点.currentStyle(oDiv)["width"];
+
+            */
+           alert(getComputedStyle(oDiv)["width"]);
+        }
+
+
+        //获取当前样式的兼容函数
+        function getStyle(elem,attr){
+            return  elem.currentStyle?elem.currentStyle[attr]:getComputedStyle(elem)[attr];
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" style="width: 300px;height: 300px;"></div>
+</body>
+</html>

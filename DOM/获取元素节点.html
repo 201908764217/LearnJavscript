@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            id document.getElementById()
+
+            tagName node.getElementsByTagName()
+
+            name    document.getElementsByName()
+
+            class   document.getElementsByClassName()
+    
+        */
+        /*
+            通过封装函数,简化上述的操作
+            封装一个函数,可以拥有上述几种获取元素节点的功能
+            [注]css选择器
+                #id 通过id获取元素节点
+                .class  通过className获取元素节点
+                tagName 通过tagName获取元素节点
+                name = xxx 通过name获取元素节点
+        
+        */
+        function elementByClassName(parent,classStr){
+            //1.找到parent下所有的元素节点
+            var nodes = parent.getElementsByTagName('*');
+            var result = [];//用记录符合条件的元素节点
+            for(var i = 0;i<nodes.length;i++){
+                if(nodes[i].className == classStr){
+                    result.push(nodes[i]);
+                }
+            }
+            return result;
+       }
+
+        function $(vArg){
+            //1.对参数分类
+            switch(vArg[0]){
+                case "#"://id
+                    return document.getElementById(vArg.substring(1));break;
+                case "."://className
+                    return elementByClassName(document,vArg.substring(1));
+                    break;
+                default:
+                    //对参数前五个字符进行判断
+                    var str = vArg.substring(0,5);
+                    if(str == "name="){
+                        return document.getElementsByName(vArg.substring(5));
+
+                    }
+                    else{
+                        return document.getElementsByTagName(vArg);
+                    }
+                break;
+            }
+        }
+
+        window.onload =function(){
+            //测试id
+            //alert($("#div1").innerHTML);
+
+            //测试class
+            //alert($(".box")[1].innerHTML);
+
+            //测试tagName
+            //alert($("div")[0].innerHTML);
+
+            //测试name="hello"
+            //alert($("name=hello")[0].innerHTML);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">111111111111</div>
+    <div class="box">222222222222</div>
+    <div class="box">3333333333</div>
+    <div name="hello">4444444444</div>
+</body>
+</html>

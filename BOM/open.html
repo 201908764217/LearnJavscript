@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            window.open()
+            open()
+
+        
+        
+        */
+        function $(id){
+            return document.getElementById(id);
+        }
+        window.onload=function(){
+            var oBtn = $("btn");
+            oBtn.onclick = function(){
+               // open("http://www.bilibili.com","哔哩哔哩");
+                //如果只有一个参数的时候,加载url
+                //第二个参数,事给打开的窗口起一个名字,以后加载就在这个窗口加载url
+                //第三个参数,一串特殊的字符串
+                open("http://www.bilibili.com","哔哩哔哩","width=400,height=400,top=200,left=200");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+</body>
+</html>

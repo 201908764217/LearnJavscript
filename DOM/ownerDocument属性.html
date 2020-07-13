@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+           ownerDocument    属性
+           [注]ownerDocument
+           属性返回该节点的文档对象节点,返回对对象相当于document 
+        
+        */
+
+        /*
+            parentNode      previousSibling     nextSibling     属性
+
+            parentNode          属性返回该节点的父节点
+            previousSlbling     属性返回该节点的前一个同级节点
+            nextSibling         属性返回该节点的最后一个同级节点
+        
+        */
+       window.onload = function(){
+           var oDiv = document.getElementById("div1");
+
+           //alert(oDiv.ownerDocument == document);//true
+            alert(oDiv.parentNode.nodeName);
+
+
+       }
+    </script>
+</head>
+<body>
+    <span></span>
+    <div id="div1"></div>
+    <p></p>
+</body>
+</html>

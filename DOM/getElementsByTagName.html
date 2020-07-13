@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            document.getElementsByTagName()
+            node.getElementsByTagName()
+            [注]从node节点开始找出所有符合的节点元素
+            参数:标签名
+            功能:获取当前页面上所有符合该标签名标准的元素节点
+            返回值:
+        */
+        window.onload = function(){
+            //获取当前页面上的所有li标签
+           /* var alis = document.getElementsByTagName("li");
+            alert(alis.length);//[object HTMLCollection]   是一个数组
+            */  
+            var oUl = document.getElementById("ul1");
+            var aLis = oUl.getElementsByTagName('li');
+            alert(aLis.length);
+            for(var i = 0;i < aLis.length; i++){
+                //遍历ul>li元素
+                alert(aLis[i]);
+               // alert(aLis.item(i).innerHTML);比较少用
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li>0000000014</li>
+        <li>0000000024</li>
+        <li>0000000034</li>
+        <li>0000000044</li>
+    </ul>
+    <ol>
+        <li>000000001</li>
+        <li>000000002</li>
+        <li>000000003</li>
+        <li>000000004</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            node.getElementsByClassName()
+            功能:获取node节点下,所有符合条件的元素节点
+            参数:class
+            返回值:所有符合条件的元素节点组成的数组
+
+        
+        */
+       window.onload = function(){
+         
+           var nodes = document.getElementsByClassName("box");
+           alert(nodes);//[object HTMLCollection]
+           alert(nodes.length);
+           for(var i=0;i<nodes.length;i++){
+               alert(nodes[i].innerHTML);
+           }
+       }
+
+
+       function elementByClassName(parent,classStr){
+            //1.找到parent下所有的元素节点
+            var nodes = parent.getElementsByTagName('*');
+            var result = [];//用记录符合条件的元素节点
+            for(var i = 0;i<nodes.length;i++){
+                if(nodes[i].className == classStr){
+                    result.push(nodes[i]);
+                }
+            }
+            return result;
+       }
+    </script>
+</head>
+<body>
+    <ul id="ul1">
+        <li>0001</li>
+        <li class="box">0002</li>
+        <li class="box">0003</li>
+        <li>0004</li>
+    </ul>
+    <ol id="ol1">
+        <li>0001</li>
+        <li class="box">0002</li>
+        <li class="box">0003</li>
+        <li>0004</li>
+    </ol>
+</body>
+</html>

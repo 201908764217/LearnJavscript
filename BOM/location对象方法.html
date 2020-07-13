@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            assign()
+            跳转到指定的URL
+
+
+            reload()
+            重载当前URL
+
+
+            replace()
+
+        */
+       function $(id){
+           return document.getElementById(id);
+       }
+       window.onload = function(){
+            var oBtn = $("btn");
+            oBtn.onclick = function(){
+              //  location.assign("http://www.bilibili.com");
+              // locaton.reload(true);
+              location.replace("https://www.baidu.com");
+            }
+       }
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="按钮"/>
+</body>
+</html>

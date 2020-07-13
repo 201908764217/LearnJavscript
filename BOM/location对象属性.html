@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        /*
+            location.hash   锚点    #1  实现页内跳转
+            host    主机名:端口号 浏览器的端口号默认8080
+            hostname    主机名   域名/IP
+            href    整个URL 
+            pathname   路径名
+            port    端口号
+            protocol    协议    http:网络协议   file:本地文件协议
+            search  查询字符串  跟在  ?  后面的部分
+
+
+
+
+
+
+            URL:
+            protocol(协议):host(主机名):port(端口号)/pathname(路径)?查询字符串(search)#锚点(hash)
+            http://www.baidu.com:8080/code/xxx.html?username=xxx&age=18#1
+            
+        */
+        window.onload = function(){
+            document.onclick = function(){
+                location.hash = "#3";
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

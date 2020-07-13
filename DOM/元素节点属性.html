@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            childNodes  获取当前元素节点的所有的子节点
+        
+        */
+        window.onload = function(){
+            var oDiv =document.getElementById("div1");
+
+
+            //object NodeList   装有当前元素节点所有的子节点
+            /*
+            
+            
+            */
+
+            //元素节点
+            alert(oDiv.childNodes[0].nodeName);//EM
+            alert(oDiv.childNodes[0].nodeType);//1
+            alert(oDiv.childNodes[0].nodeValue);//null
+
+
+            //文本节点
+            alert(oDiv.childNodes[1].nodeName);//#text
+            alert(oDiv.childNodes[1].nodeType);//3
+            alert(oDiv.childNodes[1].nodeValue);//文本内容
+            /*
+                DOM节点类型
+    节点类型      元素节点    文本节点    属性节点
+
+    nodeName   
+
+    nodeType
+
+    nodeValue       
+            
+            */
+            /*
+            
+            firstChild  快速找到当前元素节点子节点的第一个
+            lastChild   快速找到元素节点子节点的最后一个
+            
+            
+            */
+
+            // alert(oDiv.firstChild.nodeName);
+            // alert(oDiv.lastChild.nodeName);
+
+        }
+        /*
+            将空白节点去除
+            如何识别空白节点
+            /^\s+$/.test()  使用左侧的正则进行验证,如果符合true,否则false;
+
+        */
+        function removeSpaceNode(nodes){
+            var result =[];//用来存放不算空白节点的节点
+            for(var i=0;i < nodes.length;i++){
+                //判断是否是空白节点
+                if(nodes[i].nodeType==3 && /^\s+$/.test(nodes[i].nodeValue)){
+                    continue;
+                }
+                result.push(nodes[i]);
+            }
+        }
+
+       // alert(/^\s+$/.test("  ") );
+        /* */
+
+
+
+        function removeSpaceNodeFromParent(parent){
+            var nodes = parent.childNodes;
+            for(var i=nodes.length-1;i>=0;i--){
+                if(nodes[i].nodeType == 3 && /^\s+$/.test(nodes[i].nodeValue)){
+                    //删除该空白节点
+                    parent.removeChild(nodes[i]);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"><em>斜体</em>文本内容<strong>粗体</strong></div>
+</body>
+</html>

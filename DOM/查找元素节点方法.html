@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            元素节点属性
+                通过这个节点对象,访问它的一系列属性
+                tagName 获取元素节点的标签名
+                innerHTML   获取元素节点标签间的内容
+
+
+            HTML属性的属性
+                id
+                title
+                style
+                className   在获取class,不能直接class,必须使用className
+                访问这些属性
+                    元素节点.属性名
+                    元素节点[属性名]
+        */
+        function $(id){
+            return document.getElementById(id);
+        }
+        window.onload = function(){
+            var oDiv =$("div1");
+            /*alert(oDiv.id);
+            alert(oDiv.title);
+            alert(oDiv.class);*/
+            oDiv.style.width = "400px"
+
+            /*
+                在style样式中
+                background-color    使用-链接的属性
+                访问的时候,要将-去掉,然后将后序单词的首字母大写
+            
+            */
+            // oDiv.style.backgroundColor ="blue";
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" class="box" style="width: 300px;height: 300px;background-color: red;"><em>协议</em></div>
+</body>
+</html>
