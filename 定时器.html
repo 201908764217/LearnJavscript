@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       var i = 0;
+       function show(){
+           var txt = document.getElementById("txt"); 
+           txt.value = i++;
+       } 
+
+       window.onload = function(){
+           var oBtn =document.getElementById("btn");
+           oBtn.onclick = function(){
+               setInterval(show,1000);
+           }
+       }
+    </script>
+    <style>
+        #txt{
+            width: 100px;
+            height: 50px;
+        }
+        #btn{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        .container{
+            margin: 300px 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" value=" " id="txt">
+    <input type="button" value="开始计时" id="btn">
+    </div>
+</body>
+</html>

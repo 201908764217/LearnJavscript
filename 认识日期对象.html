@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        //日期对象Data
+        var d =Date();//如果不传参,默认系统时间
+        //格林尼治时间,中国处于东八区
+        alert(d);
+        /*参数类型:
+        Date("2020/07/10");
+        Date("2020-07-10");
+        Date(2020,07,10,11,20);
+        
+
+
+
+        1秒=1000毫秒
+        参数可以是毫秒数,计算从1970年开始+毫秒数,计算出这个时间
+
+        以1970年1月1日为参照物
+        */
+
+        /*
+            日期对象的格式化方法
+            [格式]日期对象.方法();
+
+            set系列的函数 是设置值
+            get系列的函数 是获取值
+        
+
+
+            set/getDate();//1~31
+            getDay();//0~6
+            set/getMonth();//0~11
+            set/getFullYear();
+            set/getHours();
+            set/getMinutes();
+            set/getSeconds();
+            set/getMillseconds();
+            set/getTime();//返回当前距离1970的毫秒数
+            getTimezoneOffset();//返回本地时间与格林尼治标准时间(GMT)的分钟差
+
+
+
+            Date.parse("2020-07-10")
+            参数:是一个日期格式的字符串
+            功能:返回这个日期距离1970年的毫秒数
+
+        */
+        var d =new Date();
+        alert(d.toLocaleDateString());
+        alert(d.getDate());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

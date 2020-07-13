@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒泡排序</title>
+    <script>
+        /*冒泡排序原理
+        前后两个数两两比较,符合条件的话就交换位置,直到排序完成*/
+        var arr=[9,8,7,6,5,4,3,2,1]
+        //想要数组从小到大排序
+        for(var i=0;i<arr.length;i++){
+            for(var j=0;j<arr.length-i-1;j++){
+                if(arr[j]>arr[j+1]){
+                    var temp = arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1]=temp;
+                }
+            }
+        }
+        alert(arr);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

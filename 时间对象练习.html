@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showDate(){
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1;
+            var day = d.getDate();
+
+            var week = d.getDay();
+            if(week == 0){
+                week = "日";
+            }
+            if(week == 1){
+                week = "一";
+            }
+            if(week == 2){
+                week = "二";
+            }
+            if(week == 3){
+                week = "三";
+            }
+            if(week == 4){
+                week = "四";
+            }
+            if(week == 5){
+                week = "五";
+            }
+            if(week == 6){
+                week = "六";
+            }
+
+
+            var hour =d.getHours();
+            var min =d.getMinutes();
+            var second = d.getSeconds();
+
+            return year +"年"+month +"月"+day +"日  星期"+ week +" "+hour +":"+min+":"+second; 
+        }
+        function numOfDate(n){
+            var d = new Date();
+            var day = d.getDate();
+            d.setDate(day+n);
+            return d;
+        }
+        alert(numOfDate(2));
+        alert(showDate());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

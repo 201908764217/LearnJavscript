@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /*
+            对象的创建
+            对象中存储的数据,我们叫做对象的属性
+            对象中存储的函数,我们叫做对象的方法
+
+        */
+
+        //1.用new运算符创建对象
+        var person = new Object();
+        //给该对象添加数据/属性
+        person.name = "***";
+        person.age = 18;
+
+        person.showName = function(){
+
+             
+        }
+
+        //var person = Object();
+
+        //3.使用常量/字面量去创建对象
+        var person = {};
+        person["name"]="XXX";
+
+        person.showName = function(){
+            alert(person["name"]);
+        }
+        person.showName();
+
+        /*
+            delete删除对象的属性
+        */
+        alert(person.name);
+        delete(person.name);
+        alert(person.name);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
