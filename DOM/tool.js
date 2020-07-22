@@ -48,3 +48,31 @@ function $(vArg){
  function getStyle(elem,attr){
     return  elem.currentStyle?elem.currentStyle[attr]:getComputedStyle(elem)[attr];
 }
+
+/**
+ * 创建带节点的文本
+ * @param {*} tagName 
+ * @param {*} txt 
+ */
+function createElementWithTxt(tagName,txt){
+    var node = document.createElement(tagName);
+    var oTxt = document.createTextNode(txt);
+    node.appendChild(oTxt);
+    return node;
+}
+
+       /*
+            DOM里面没有insertAfter()
+        
+        */
+       function insertAfter(newNode,oldNode){
+        //判断oidNode是否是最后一个节点
+        var parent = oldNode.parentNode;
+        if(oldNode == parent.lastChild){
+            //最后一个节点,直接插入到子节点的末尾
+            parent.appendChild(newNode);
+        }else{
+            //插入到oldNode的下一个节点前
+            parent.insertBefore(newNode,oldNode.nextSibling);
+        }
+   }
