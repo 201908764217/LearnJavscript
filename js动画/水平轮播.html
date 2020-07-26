@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        .slider{
+            width: 700px;
+            height: 400px;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        .slider .list{
+            position: absolute;
+        }
+        .slider .list .item{
+            width: 700px;
+            height: 400px;
+            float: left;
+        }
+        .slider .list .item img{
+            width: 700px;
+            height: 400px;
+            display: block;
+        }
+        .slider .prev,.slider .next{
+            position: absolute;
+            top: 150px;
+        }
+        .slider .next{
+            right: 0;
+        }
+        .slider .pagination .buttet {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(0, 0, 0);
+            margin-left: 5px;
+            top: 200px;
+            z-index: 999;
+            float: left;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <ul class="list">
+            <li class="item"><img src="./imgs/img (1).jpg" alt=""></li>
+            <li class="item"><img src="./imgs/img (2).jpg" alt=""></li>
+            <li class="item"><img src="./imgs/img (3).jpg" alt=""></li>
+            <li class="item"><img src="./imgs/img (4).jpg" alt=""></li>
+        </ul>
+        <button class="prev">prev</button>
+        <button class="next">next</button>
+        <ul class="pagination">
+            <li class="buttet focus"></li>
+            <li class="buttet"></li>
+            <li class="buttet"></li>
+            <li class="buttet"></li>
+        </ul>
+    </div>
+</body>
+</html>

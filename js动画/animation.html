@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0em;
+            padding: 0em;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            left: 0em;
+            top: 0em;
+            position:absolute;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="./animation.js"></script>
+    <script>
+        var div = document.querySelector("div");
+        animate(div,{
+            width: 200,
+            left: 500,
+            opacity:20
+        });
+    </script>
+</body>
+</html>
