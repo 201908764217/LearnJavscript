@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="tool.js"></script>
+    <script>
+        /*
+            insertBefore()
+            [格式]父节点,insertBefore(插入的节点,旧节点)
+            功能:将待插入的节点插入旧节点之前
+        
+        
+        */
+        window.onload = function(){
+            //创建一个<strong>节点,插入到span前
+            //1.创建strong节点
+            var node = createElementWithTxt("strong","strong文本");
+
+            var oSpan = document.getElementsByTagName("span")[0];
+            // //2.进行插入操作
+            // oSpan.parentNode.insertBefore(node,oSpan);
+
+            insertAfter(node,oSpan);
+        }
+
+        /*
+            DOM里面没有insertAfter()
+        
+        */
+       function insertAfter(newNode,oldNode){
+            //判断oidNode是否是最后一个节点
+            var parent = oldNode.parentNode;
+            if(oldNode == parent.lastChild){
+                //最后一个节点,直接插入到子节点的末尾
+                parent.appendChild(newNode);
+            }else{
+                //插入到oldNode的下一个节点前
+                parent.insertBefore(newNode,oldNode.nextSibling);
+            }
+       }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <p></p>
+        <span></span>
+        <em></em>
+    </div>
+</body>
+</html>
